@@ -25,55 +25,33 @@ AppAsset::register($this);
 </head>
 <body>
 <?php $this->beginBody() ?>
-
-<div class="wrap">
-    <?php
-    NavBar::begin([
-        'brandLabel' => Yii::$app->name,
-        'brandUrl' => Yii::$app->homeUrl,
-        'options' => [
-            'class' => 'navbar-inverse navbar-fixed-top',
-        ],
-    ]);
-    echo Nav::widget([
-        'options' => ['class' => 'navbar-nav navbar-right'],
-        'items' => [
-            ['label' => 'Home', 'url' => ['/site/index']],
-            ['label' => 'About', 'url' => ['/site/about']],
-            ['label' => 'Contact', 'url' => ['/site/contact']],
-            Yii::$app->user->isGuest ? (
-                ['label' => 'Login', 'url' => ['/site/login']]
-            ) : (
-                '<li>'
-                . Html::beginForm(['/site/logout'], 'post')
-                . Html::submitButton(
-                    'Logout (' . Yii::$app->user->identity->username . ')',
-                    ['class' => 'btn btn-link logout']
-                )
-                . Html::endForm()
-                . '</li>'
-            )
-        ],
-    ]);
-    NavBar::end();
-    ?>
-
-    <div class="container">
-        <?= Breadcrumbs::widget([
-            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-        ]) ?>
-        <?= Alert::widget() ?>
-        <?= $content ?>
+<div class = "main-header">
+    <div class = "wrapper">
+    <nav class = "main-navigation">
+        <ul class = "logo-list">
+            <li class = "navigation-item navigation-main-logo">
+                <a href = "#" class = "navigation-item main-logo">
+                    <img src = "img/svg/nerds-logo.svg" alt = "Логотип Nerd's" width = "160" height = "65">
+                </a>
+            </li>
+        </ul>
+        <ul class = "navigation-list">
+            <li class = "navigation-item navigation-item-selected"><a href = "#">Студия</a></li>
+            <li class = "navigation-item navigation-item-disabled"><a href = "#">Клиенты</a></li>
+            <li class = "navigation-item"><a href = "catalog.html">Магазин</a></li>
+            <li class = "navigation-item navigation-item-disabled"><a href = "#">Контакты</a></li>
+        </ul>
+        <ul class = "navigation-backet">
+            <li class = "navigation-item navigation-backet-item navigation-item-disabled"><a href = "#">Корзина</a></li>
+        </ul>
+    </nav>
     </div>
 </div>
 
-<footer class="footer">
-    <div class="container">
-        <p class="pull-left">&copy; My Company <?= date('Y') ?></p>
-
-        <p class="pull-right"><?= Yii::powered() ?></p>
-    </div>
-</footer>
+<?= $content ?>
+<script type = "text/javascript" src = "JS/Script.js"></script>
+<script type = "text/javascript" src = "JS/Modal.js"></script>
+<script type = "text/javascript" src = "JS/Map.js"></script>
 
 <?php $this->endBody() ?>
 </body>
