@@ -661,7 +661,8 @@ sup{
 /*------Catalog.html------*/
 
 .header-title{
-    padding: 9px 0 110px 0;
+    margin-top: 0px;
+    padding: 50px 0 110px 0;
 
     font-family: "RobotoMedium";
     font-size: 50px;

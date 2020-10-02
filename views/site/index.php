@@ -146,52 +146,5 @@
             </section>
             <hr>
         </div>
-        <section class = "our-location">
-            <div class = "wrapper">
-                <h1 class = "visually-hidden">Контактные данные</h1>
-                <div class = "address">
-                    <h2>NЁRDS DESIGN STUDIO</h2>
-                    <p>191186, Санкт-Питербург,<br>
-                        ул.Б. Конюшенная, д. 19/8</p>
-                    <p>тел. +7 (812) 275-75-75</p>
-                    <br>
-                    <button class = "modal-call button button-red">Напишите нам</button>
-                </div>
-            </div>
-            <div id="map"></div>
-        </section>
     </main>
-    <div class = "wrapper">
-        <footer class = "main-footer">
-            <div class = "social">
-                <ul class = "social-list">
-                    <li class="social-item"><a class = "social-icon social-icon-vk" href="#"><span class="visually-hidden">Вконтакте</span></a></li>
-                    <li class="social-item"><a class = "social-icon social-icon-fb" href="#"><span class="visually-hidden">Фейсбук</span></a></li>
-                    <li class="social-item"><a class = "social-icon social-icon-inst" href="#"><span class="visually-hidden">Инстаграм</span></a></li>
-                </ul>
-                <div class = "text-footer">
-                    <h4>Давайте дружить, это выгодно!</h4>
-                    <p>Скидка 10% для друзей из социальных сетей.</p>
-                </div>
-            </div>
-        </footer>
-    </div>
 </div>
-<section class = "modal-window">
-    <div class = "modal-wrapper">
-        <span class="close-cross"></span>
-        <h2 class = "modal-title">Напишите нам</h2>
-        <form id = "modal" class = "modal-form" method = "post" action = "action.php">
-            <label>Ваше имя:<br>
-                <input type = "text" placeholder = "Представьтесь, пожалуйста" id = "user-name">
-            </label>
-            <label>Ваш e-mail:<br>
-                <input type = "email" placeholder = "Для отправки ответа" id = "user-email">
-            </label>
-            <label>Текст письма:<br>
-                <textarea placeholder = "В свободной форме" id = "user-text"></textarea>
-            </label>
-        </form>
-        <button class = "button button-red modal-button" type = "submit" form = "modal">Отправить</button>
-    </div>
-</section>
