@@ -64,7 +64,7 @@
                             Мир никогда не будет прежним <br>
                             после того, как увидит ваш сайт!
                         </p>
-                        <button class = "product-button button-red button">Заказать</button>
+                        <a href = "index.php?r=site%2Fcatalog" class = "product-button button-red button">Заказать</a>
                     </li>
                     <li class = "product-item">
                         <img src = "img/index_products/app.jpg" width = "300" height="146" alt = "Приложения">
@@ -73,7 +73,7 @@
                             Покорите топ-10 приложений в <br>
                             AppStore и Google Play
                         </p>
-                        <button class = "product-button button-green button">Заказать</button>
+                        <a href = "index.php?r=site%2Fcatalog" class = "product-button button-green button">Заказать</a>
                     </li>
                     <li class = "product-item">
                         <img src = "img/index_products/presentation.jpg" width = "300" height="146" alt = "Презентации">
@@ -82,7 +82,7 @@
                             Вы даже не подозреваете, <br>
                             насколько вы изумительны!
                         </p>
-                        <button class = "product-button button-yellow button">Заказать</button>
+                        <a href = "index.php?r=site%2Fcatalog" class = "product-button button-yellow button">Заказать</a>
                     </li>
                 </ul>
             </section>
@@ -148,3 +148,4 @@
         </div>
     </main>
 </div>
+<script type = "text/javascript" src = "JS/Script.js"></script>

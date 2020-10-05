@@ -1,6 +1,7 @@
 <?php
     use yii\helpers\Html;
     use yii\widgets\LinkPager;
+    use yii\helpers\Url;
 ?>
 
 <header class="main-header">
@@ -75,11 +76,39 @@
                             <div class = "sorting">
                                 <h2>Сортировать:</h2>
                                 <ul class = "sorting-by">
-                                    <li class = "sorting-by-elements active-sort"><a>По цене</a></li>
-                                    <li class = "sorting-by-elements"><a href = "#">По типу</a></li>
-                                    <li class = "sorting-by-elements"><a href = "#">По названию</a></li>
-                                    <li><a class = "sort-down active-sort-order"></a></li>
-                                    <li><a class = "sort-up"  href = "#"></a></li>
+                                    <li class = "<?php
+                                         echo explode("/",$_GET["sort"])[0] == "price" ? 'sorting-by-elements active-sort' : "sorting-by-elements"
+                                    ?>">
+                                        <?= Html::tag('a',"По цене",[
+                                                'class' => [
+                                                        explode("/",$_GET["sort"])[0] == "price" ? 'active-sort' : ""],
+                                                'href' => Url::to(['/site/catalog', 'sort' => 'price','order' => "up"])
+                                        ])?>
+                                    </li>
+                                    <li class = "<?php
+                                         echo explode("/",$_GET["sort"])[0] == "name" ? 'sorting-by-elements active-sort' : "sorting-by-elements"
+                                    ?>">
+                                        <?= Html::tag('a',"По названию",[
+                                                'class' => [
+                                                    explode("/",$_GET["sort"])[0] == "name" ? 'active-sort' : ""],
+                                                'href' => Url::to(['/site/catalog', 'sort' => 'name','order' => 'up',])
+                                        ])?>
+                                   </li>
+
+                                    <li>
+                                        <?= Html::tag('a',"",[
+                                            'class' => [
+                                                explode("/",$_GET["order"])[0] == "up" ? 'sort-down active-sort-order' : "sort-down"],
+                                            'href' => Url::to(['/site/catalog', 'order' => 'up','sort' => explode("/",$_GET["sort"])[0]])
+                                        ])?>
+                                    </li>
+                                    <li>
+                                        <?= Html::tag('a',"",[
+                                            'class' => [
+                                                explode("/",$_GET["order"])[0] == "down" ? 'sort-up active-sort-order' : "sort-up"],
+                                            'href' => Url::to(['/site/catalog', 'order' => 'down','sort' => explode("/",$_GET["sort"])[0]])
+                                        ])?>
+                                    </li>
                                 </ul>
                             </div>
                             <div class = "template">

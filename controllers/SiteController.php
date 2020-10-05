@@ -11,6 +11,7 @@ use app\models\LoginForm;
 use app\models\ContactForm;
 use app\models\Sites;
 use yii\data\Pagination;
+use yii\web\request;
 
 class SiteController extends Controller
 {
@@ -73,17 +74,32 @@ class SiteController extends Controller
         return $this->render('index');
     }
 
-    public function actionCatalog()
+    public function actionCatalog($sort, $order)
     {
         $query = Sites::find();
+
+        if($order == "down"){
+            $query->OrderBy([
+                $sort => SORT_ASC
+            ]);
+        }else if ($order == "up"){
+            $query->OrderBy([
+                $sort => SORT_DESC
+            ]);
+        }
+
+//        if($sort == "name" || $sort == null){
+//
+//        }else if($sort == "price"){
+//            $query->OrderBy("price");
+//        }
 
         $pagination = new Pagination([
             'defaultPageSize' => 5,
             'totalCount' => $query->count(),
         ]);
 
-        $sites = $query->orderBy('name')
-            ->offset($pagination->offset)
+        $sites = $query->offset($pagination->offset)
             ->limit($pagination->limit)
             ->all();
 

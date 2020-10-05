@@ -30,25 +30,30 @@ AppAsset::register($this);
     <nav class = "main-navigation">
         <ul class = "logo-list">
             <li class = "navigation-item navigation-main-logo">
-                <a href = "#" class = "navigation-item main-logo">
+                <a href = "index.php?r=site%2Findex" class = "navigation-item main-logo">
                     <img src = "img/svg/nerds-logo.svg" alt = "Логотип Nerd's" width = "160" height = "65">
                 </a>
             </li>
         </ul>
-        <ul class = "navigation-list">
-            <li class = "navigation-item navigation-item-selected"><a href = "#">Студия</a></li>
-            <li class = "navigation-item navigation-item-disabled"><a href = "#">Клиенты</a></li>
-            <li class = "navigation-item"><a href = "catalog.html">Магазин</a></li>
-            <li class = "navigation-item navigation-item-disabled"><a href = "#">Контакты</a></li>
-        </ul>
-        <ul class = "navigation-backet">
-            <li class = "navigation-item navigation-backet-item navigation-item-disabled"><a href = "#">Корзина</a></li>
-        </ul>
+        <?php
+        echo Nav::widget([
+                    'options' => ['class' => 'navigation-list'],
+                    'items' => [
+                        ['label' => 'Главная', 'url' => ['/site/index'],'options'=>['class' =>
+                            explode("/",$_GET["r"])[1] == "index" ? 'navigation-item navigation-item-selected' : "navigation-item"]],
+                        ['label' => 'Каталог', 'url' => ['/site/catalog','sort' => "price", 'order' => 'up',],'options'=>[
+                                'class' =>
+                                    explode("/",$_GET["r"])[1] == "catalog" ? 'navigation-item navigation-item-selected' : "navigation-item",
+                                ]
+                        ]
+                    ]]);
+        ?>
+
     </nav>
     </div>
 </div>
-
-<?= $content ?>
+<div class = "blur">
+    <?= $content ?>
 
 <section class = "our-location">
     <div class = "wrapper">
@@ -98,10 +103,8 @@ AppAsset::register($this);
         <button class = "button button-red modal-button" type = "submit" form = "modal">Отправить</button>
     </div>
 </section>
-<script type = "text/javascript" src = "JS/Script.js"></script>
 <script type = "text/javascript" src = "JS/Modal.js"></script>
-<script type = "text/javascript" src = "JS/Map.js"></script>
-
+</div>
 <?php $this->endBody() ?>
 </body>
 </html>

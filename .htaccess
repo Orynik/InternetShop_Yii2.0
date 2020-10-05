@@ -1,0 +1,14 @@
+Options +FollowSymLinks
+IndexIgnore */*
+RewriteEngine on
+AddDefaultCharset utf-8
+
+RewriteCond %{REQUEST_URI} !^/(web)
+RewriteRule ^assets/(.*)$ /web/assets/$1 [L]
+RewriteRule ^assets/(.*)$ /web/css/$1
+RewriteRule ^fonts/(.*)$ /web/fonts/$1
+RewriteRule ^images/(.*)$ /web/img/$1 [L]
+RewriteRule ^js/(.*)$ /web/img/$1 [L]
+RewriteRule (.*) /web/$1
+
+RewriteRule . index.php [QSA]
