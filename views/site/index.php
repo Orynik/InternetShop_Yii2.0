@@ -1,3 +1,8 @@
+<?php
+    use yii\bootstrap\Html;
+    use yii\helpers\Url;
+?>
+
 <div class="blur">
     <header class = "main-header">
         <div class = "wrapper">
@@ -13,9 +18,10 @@
                             Математически выверенный дизайн <br>
                             для вашего сайта или мобильного приложения.
                         </p>
-                        <button class = "advantage-button button-red button">
-                            Узнать больше
-                        </button>
+                        <?= Html::tag('a',"Заказать",[
+                            'class' => ["advantage-button button-red button"],
+                            'href' => Url::to(['/site/catalog1'])
+                        ])?>
                     </li>
                     <li class= " slider-item slide-2" >
                         <h1 class = "slider-advantage-title">
@@ -26,9 +32,10 @@
                             Никакого креатива, только математические формулы <br>
                             для расчета идеальных пропорций.
                         </p>
-                        <button class = "advantage-button button-red button">
-                            Узнать больше
-                        </button>
+                        <?= Html::tag('a',"Заказать",[
+                            'class' => ["advantage-button button-red button"],
+                            'href' => Url::to(['/site/catalog','sort' => 'name','order' => 'up'])
+                        ])?>
                     </li>
                     <li class = "slider-item slide-3">
                         <h1 class = "slider-advantage-title">
@@ -39,9 +46,10 @@
                             Работать днем, Как все? Мы против этого <br>
                             Ближе к полуночи работа только начинается.
                         </p>
-                        <button class = "advantage-button button-red button" href = "#">
-                            Узнать больше
-                        </button>
+                        <?= Html::tag('a',"Заказать",[
+                            'class' => ["advantage-button button-red button"],
+                            'href' => Url::to(['/site/catalog','sort' => 'name','order' => 'up'])
+                        ])?>
                     </li>
                 </ul>
                 <div class = "control-panel">
@@ -64,7 +72,10 @@
                             Мир никогда не будет прежним <br>
                             после того, как увидит ваш сайт!
                         </p>
-                        <a href = "index.php?r=site%2Fcatalog" class = "product-button button-red button">Заказать</a>
+                        <?= Html::tag('a',"Заказать",[
+                            'class' => ["button-red button"],
+                            'href' => Url::to(['/site/catalog','sort' => 'name','order' => 'up'])
+                        ])?>
                     </li>
                     <li class = "product-item">
                         <img src = "img/index_products/app.jpg" width = "300" height="146" alt = "Приложения">
@@ -73,7 +84,10 @@
                             Покорите топ-10 приложений в <br>
                             AppStore и Google Play
                         </p>
-                        <a href = "index.php?r=site%2Fcatalog" class = "product-button button-green button">Заказать</a>
+                        <?= Html::tag('a',"Заказать",[
+                            'class' => ["button-green button"],
+                            'href' => Url::to(['/site/catalog','sort' => 'name','order' => 'up'])
+                        ])?>
                     </li>
                     <li class = "product-item">
                         <img src = "img/index_products/presentation.jpg" width = "300" height="146" alt = "Презентации">
@@ -82,7 +96,10 @@
                             Вы даже не подозреваете, <br>
                             насколько вы изумительны!
                         </p>
-                        <a href = "index.php?r=site%2Fcatalog" class = "product-button button-yellow button">Заказать</a>
+                        <?= Html::tag('a',"Заказать",[
+                            'class' => ["button-yellow button"],
+                            'href' => Url::to(['/site/catalog','sort' => 'name','order' => 'up'])
+                        ])?>
                     </li>
                 </ul>
             </section>

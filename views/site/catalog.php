@@ -10,65 +10,6 @@
 <div class = "blur">
         <main>
             <div class = "wrapper wrapper-flex-catalog">
-                <aside>
-                    <form class="form-sidebar" method = "POST" action = "action.php">
-                        <fieldset class = "value">
-                            <legend>Стоимость:</legend>
-                            <div class = "range-div">
-                                <input class = "range"  name = "cost" type = "range" min = "0" max = "15000" id = "range" value = "8700" step = "1" oninput="change()"><br> <!--TO DO привязать к полям max min-->
-                            </div>
-                            <div class = "cost-label">
-                                <label class = "first-label">
-                                    <input type = "number" name = "min-value-range" id = "min-range" value = "0">
-                                    <span>ОТ:</span>
-                                </label>
-                                <label class = "second-label">
-                                    <input type = "number" name = "max-value-range" id = "max-range" max = "15000" value = "8700" oninput="changeMax()">
-                                    <span>ДО:</span>
-                                </label>
-                            </div>
-                        </fieldset>
-                        <fieldset>
-                            <legend class = "title-grid">Сетка:</legend>
-                            <label class = "radio">
-                                <input class = "radio" type = "radio" name = "grid" value = "adaptive" checked>
-                                <div class = "radio__text">Адаптивная</div>
-                            </label>
-                            <label class = "radio">
-                                <input class = "radio" type = "radio" name = "grid" value = "fixed">
-                                <div class = "radio__text">Фиксированная</div>
-                            </label>
-                            <label class = "radio">
-                                <input class = "radio" type = "radio" name = "grid" value = "flex" disabled>
-                                <div class = "radio__text">Резиновая</div>
-                            </label>
-                        </fieldset>
-                        <fieldset>
-                            <legend>Особенности:</legend>
-                            <label class = "checkbox">
-                                <input class = "checkbox" type = "checkbox" name = "feature" value = "slider">
-                                <div class="checkbox__text">Слайдер<br></div>
-                            </label>
-                            <label class = "checkbox">
-                                <input class = "checkbox" type = "checkbox" name = "feature" value = "block-of-features">
-                                <div class="checkbox__text">Блок преимуществ<br></div>
-                            </label>
-                            <label class = "checkbox">
-                                <input class = "checkbox" type = "checkbox" name = "feature" value = "news">
-                                <div class="checkbox__text">Новости<br></div>
-                            </label>
-                            <label class = "checkbox">
-                                <input class = "checkbox" type = "checkbox" name = "feature" value = "gallery">
-                                <div class="checkbox__text">Галерея<br></div>
-                            </label>
-                            <label class = "checkbox">
-                                <input class = "checkbox" type = "checkbox" name = "feature" value = "basket" disabled>
-                                <div class="checkbox__text">Корзина<br></div>
-                            </label>
-                        </fieldset>
-                        <input class = "button form-button" type = "submit" value = "Показать">
-                    </form>
-                </aside>
                 <div class="wrapper-flex-template-catalog">
                     <div class = "flex-template">
                         <section class = "ready-template">
@@ -134,6 +75,17 @@
                                 <?php endforeach; ?>
                                 </ul>
                             </div>
+                            <ul class = "breadcrumbs">
+                            <?php
+                                echo LinkPager::widget([
+                                'pagination' => $pagination,
+//                                    'options'=>[
+//                                            'class'=> '',
+//                                            'linkOptions' => 'breadcrumbs-item'
+//                                    ],
+                                ]);
+                            ?>
+                            </ul>
                         </section>
                     </div>
                 </div>

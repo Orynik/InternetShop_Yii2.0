@@ -26,6 +26,15 @@ ul{
     list-style: none;
 }
 
+a{
+    color: black;
+}
+
+a:hover{
+    text-decoration: none;
+    color: black;
+}
+
 
 /*Состояния кнопок-ссылок*/
 .button-red{
@@ -99,6 +108,40 @@ ul{
     text-decoration: none;
 }
 
+.button-admin{
+    display: inline-block;
+    width: 100px;
+    height: 45px;
+    border: none;
+
+    font-size: 13px;
+    line-height: 48px;
+    font-weight: 600;
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+
+    border-radius: 4px;
+
+    cursor: pointer;
+}
+
+.button-admin__blue{
+    background-color: #0a73bb;
+}
+
+.button-admin__red{
+    background-color: red;
+}
+
+.button-admin__green{
+    background-color: #00ca74;
+}
+
+.button-admin__purple{
+    background-color: #6610f2;
+}
+
 hr{
     background: #eeeeee;
 }
@@ -141,6 +184,12 @@ td{
     align-items: center;
     flex-wrap: wrap;
     width: 560px;
+}
+
+.main-logo{
+    display: block;
+    margin: auto;
+    width: 160px;
 }
 
 .main-logo > img:hover{
@@ -492,8 +541,6 @@ sup{
 }
 
 #map{
-    /*TODO: Убрать, когда сделаю нормальное API GoogleMaps*/
-    Background: #00b3ee;
 
     position: relative;
     z-index: 1;
@@ -755,7 +802,7 @@ sup{
 
 .wrapper-flex-catalog{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .wrapper-flex-template-catalog{
@@ -1519,4 +1566,44 @@ label.radio{
 
 .checkbox input:disabled + .checkbox__text::after {
 	background: RGBA(77, 77, 77,0.4);
+}
+
+.table-admin{
+    margin: auto;
+    border: 1px solid black;
+}
+
+.admin-btnoptions{
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 15px;
+}
+
+.admin-btn{
+
+}
+
+.admin-form__wrapper{
+
+}
+
+.admin-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 10px 15px;
+    margin: 0 auto;
+    height: 350px;
+    width: 300px;
+}
+
+.admin-form__label{
+    font-size: 18px;
+}
+
+.button-admin-form{
+    width: 100%;
+    margin-top: 10px;
 }

@@ -5,6 +5,7 @@
 
 use app\widgets\Alert;
 use yii\helpers\Html;
+use yii\helpers\Url;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
@@ -21,6 +22,8 @@ AppAsset::register($this);
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?php $this->registerCsrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
+    <!-- Скрипт YMAP -->
+<!--    <script src="https://api-maps.yandex.ru/2.1/?apikey=f995437f-03a2-48ba-a815-92262155fffd&lang=ru_RU" type="text/javascript"></script>-->
     <?php $this->head() ?>
 </head>
 <body>
@@ -45,6 +48,11 @@ AppAsset::register($this);
                                 'class' =>
                                     explode("/",$_GET["r"])[1] == "catalog" ? 'navigation-item navigation-item-selected' : "navigation-item",
                                 ]
+                        ],
+                        ['label' => 'CRUD', 'url' => ['/admin/index'],'options'=>[
+                            'class' =>
+                                explode("/",$_GET["r"])[1] == "catalog" ? 'navigation-item navigation-item-selected' : "navigation-item",
+                        ]
                         ]
                     ]]);
         ?>
@@ -104,6 +112,7 @@ AppAsset::register($this);
     </div>
 </section>
 <script type = "text/javascript" src = "JS/Modal.js"></script>
+<script type = "text/javascript" src = "JS/Map.js"></script>
 </div>
 <?php $this->endBody() ?>
 </body>
