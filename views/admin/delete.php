@@ -6,9 +6,9 @@ use yii\helpers\Html;
 <h1>AdminPanel: Удалить</h1>
 <legend>Вы действительно хотите удалить сайт <?= $site->Name ?> ?</legend>
 <section class = "admin-form__wrapper">
-    <?= Html::beginForm(['/api/edit'], 'post',["class" => ["admin-form"]]) ?>
+    <?= Html::beginForm(['/api/delete'], 'post',["class" => ["admin-form"]]) ?>
     <?= Html::hiddenInput('id', "{$site->id}") ?>
-    <?= Html::label("Название","id");?>
+    <?= Html::label("Название","name");?>
     <?= Html::textInput("name","{$site->Name}") ?>
     <?= Html::label("Цена","price");?>
     <?= Html::textInput("price","{$site->Price}") ?>

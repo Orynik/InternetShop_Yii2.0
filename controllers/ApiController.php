@@ -24,9 +24,9 @@ class ApiController extends Controller
     public function actionCreate(){
         $site = new Sites();
         $site -> Name = $_POST["name"];
-        $site -> Price = $_POST["name"];
-        $site -> Description = $_POST["name"];
-        $site -> Grid = $_POST["name"];
+        $site -> Price = $_POST["price"];
+        $site -> Description = $_POST["description"];
+        $site -> Grid = $_POST["type"];
         $site->save();
 
         Yii::$app->response->redirect(Url::to(['admin/index'], true));
