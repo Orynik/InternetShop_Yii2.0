@@ -33,26 +33,30 @@ AppAsset::register($this);
     <nav class = "main-navigation">
         <ul class = "logo-list">
             <li class = "navigation-item navigation-main-logo">
-                <a href = "index.php?r=site%2Findex" class = "navigation-item main-logo">
-                    <img src = "img/svg/nerds-logo.svg" alt = "Логотип Nerd's" width = "160" height = "65">
-                </a>
+                <?=Html::a(Html::img('/img/svg/nerds-logo.svg',['alt' => "Логтик Nerd's", 'width' => "160", 'height' => "65"]), '/');?>
             </li>
         </ul>
         <?php
         echo Nav::widget([
                     'options' => ['class' => 'navigation-list'],
                     'items' => [
-                        ['label' => 'Главная', 'url' => ['/site/index'],'options'=>['class' =>
-                            explode("/",$_GET["r"])[1] == "index" ? 'navigation-item navigation-item-selected' : "navigation-item"]],
-                        ['label' => 'Каталог', 'url' => ['/site/catalog','sort' => "price", 'order' => 'up',],'options'=>[
-                                'class' =>
-                                    explode("/",$_GET["r"])[1] == "catalog" ? 'navigation-item navigation-item-selected' : "navigation-item",
-                                ]
+                        ['label' => 'Главная', 'url' => ['/site/index'],
+                            'options'=>[
+                                    'class' =>
+                                        Yii::$app->controller->action->id == "index" ? 'navigation-item navigation-item-selected' : "navigation-item"
+                            ]
                         ],
-                        ['label' => 'CRUD', 'url' => ['/admin/index'],'options'=>[
-                            'class' =>
-                                explode("/",$_GET["r"])[1] == "catalog" ? 'navigation-item navigation-item-selected' : "navigation-item",
-                        ]
+                        ['label' => 'Каталог', 'url' => ['/site/catalog','sort' => "price", 'order' => 'up',],
+                            'options'=>[
+                                'class' =>
+                                    Yii::$app->controller->action->id == "catalog" ? 'navigation-item navigation-item-selected' : "navigation-item",
+                            ]
+                        ],
+                        ['label' => 'CRUD', 'url' => ['/admin/index'],
+                            'options'=>[
+                                'class' =>
+                                "navigation-item",
+                            ]
                         ]
                     ]]);
         ?>

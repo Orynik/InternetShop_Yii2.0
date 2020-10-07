@@ -21,16 +21,17 @@ AppAsset::register($this);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?php $this->registerCsrfMetaTags() ?>
-    <!-- Скрипт YMAP -->
     <?php $this->head() ?>
 </head>
 <body>
 <?php $this->beginBody() ?>
 
 <header>
-    <a href = "index.php?r=site%2Findex" class = "navigation-item main-logo">
-        <img src = "img/svg/nerds-logo.svg" alt = "Логотип Nerd's" width = "160" height = "65">
-    </a>
+    <?=Html::a(
+            Html::img('/img/svg/nerds-logo.svg',
+                ['alt' => "Логтик Nerd's", 'width' => "160", 'height' => "65",'class' => ["navigation-item main-logo"]]
+            ), '/'
+    );?>
 </header>
 
 <?= $content ?>

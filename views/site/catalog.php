@@ -59,7 +59,8 @@
                                         <span class = "buttons-template">
                                             <i></i>
                                         </span>
-                                            <img src="img/templates/<?= mb_strtolower(Html::encode("{$siteInfo->Name}")) . ".jpg"?> " alt="Макет <?= mb_strtolower(Html::encode("{$siteInfo->Name}"))?> "   width = "360" height = "576">
+                                            <?= Html::img('');?>
+                                            <img src="/img/templates/<?= mb_strtolower(Html::encode("{$siteInfo->Name}")) . ".jpg"?> " alt="Макет <?= mb_strtolower(Html::encode("{$siteInfo->Name}"))?> "   width = "360" height = "576">
                                             <div class = "template-describe">
                                                 <div class = "template-discribe-wrapper">
                                                     <h3>
@@ -78,11 +79,7 @@
                             <ul class = "breadcrumbs">
                             <?php
                                 echo LinkPager::widget([
-                                'pagination' => $pagination,
-//                                    'options'=>[
-//                                            'class'=> '',
-//                                            'linkOptions' => 'breadcrumbs-item'
-//                                    ],
+                                    'pagination' => $pagination,
                                 ]);
                             ?>
                             </ul>

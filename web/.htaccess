@@ -1,4 +1,22 @@
+Options +FollowSymLinks
+IndexIgnore */*
 RewriteEngine on
-RewriteCond %{REQUEST_FILENAME} !-d
+AddDefaultCharset utf-8
+
+RewriteCond %{REQUEST_URI} !^/(web)
+RewriteRule ^assets/(.*)$ assets/$1 [L]
+RewriteRule ^css/(.*)$ css/$1 [L]
+RewriteRule ^JS/(.*)$ JS/$1 [L]
+RewriteRule ^fonts/(.*)$ fonts/$1 [L]
+#RewriteRule ^img/templates/(.*)$ img/templates/$1 [L]
+#RewriteRule ^img/svg/(.*)$ img/svg/$1 [L]
+#RewriteRule ^img/partners(.*)$ img/partners/$1 [L]
+#RewriteRule ^img/index_products(.*)$ img/index_products/$1 [L]
+RewriteRule ^img/(.*)$ img/$1 [L]
+RewriteRule (.*) /web/$1
+
+
+
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule . index.php [L]
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . index.php

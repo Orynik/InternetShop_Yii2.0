@@ -20,7 +20,7 @@
                         </p>
                         <?= Html::tag('a',"Заказать",[
                             'class' => ["advantage-button button-red button"],
-                            'href' => Url::to(['/site/catalog1'])
+                            'href' => Url::to(['/site/catalog','sort' => 'name','order' => 'up'])
                         ])?>
                     </li>
                     <li class= " slider-item slide-2" >
